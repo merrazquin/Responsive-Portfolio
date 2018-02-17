@@ -262,11 +262,7 @@ input[type=submit] {
         max-width: 450px;
     }
 
-    .auth-image {
-        width: 100%;
-    }
-
-    .work {
+    .auth-image, .work {
         width: 100%;
     }
     
@@ -287,6 +283,10 @@ input[type=submit] {
         width: 50%;
     }
 
+    .sidebar { 
+        margin-bottom: 40px;
+    }
+
     .work
     {
         width: 45%;
@@ -294,5 +294,26 @@ input[type=submit] {
 }
 
 @media screen and (max-width: 640px) {
+    #masthead { 
+        position: static;
+    }
+    #logo, nav {
+        width: 100%;
+        text-align: center;
+    }
+    nav {
+        margin: 10px auto;
+    }
+    nav a{
+        width: 30%;
+    }
 
+    #main-container {
+        padding-top: 10px;
+        max-width: 600px;
+    }
+    .auth-image, .work
+    {
+        width: 100%;
+    }
 }
