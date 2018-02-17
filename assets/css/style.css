@@ -296,20 +296,27 @@ input[type=submit] {
     #masthead { 
         position: static;
     }
+
     #logo, nav {
         width: 100%;
         text-align: center;
     }
+
     nav {
-        margin: 10px auto;
+        width: 100%;
+        margin: 10px 0;
+        padding: 0;
+        white-space: nowrap;
     }
-    nav a{
-        width: 30%;
+
+    nav a {
+        margin: 0;
+        width: 33.33%;
     }
 
     #main-container {
         padding-top: 10px;
-        max-width: 600px;
+        max-width: 590px;
     }
     .auth-image, .work
     {
