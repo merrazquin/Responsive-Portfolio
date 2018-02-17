@@ -252,3 +252,30 @@ input[type=submit] {
     background: #bc4f5e;
     color: #fff;
 }
+
+@media screen and (max-width: 980px) {
+    .container {
+        max-width: 760px;
+    }
+        
+    .main-section {
+        max-width: 450px;
+    }
+
+    .auth-image {
+        width: 100%;
+    }
+
+    .work {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+   
+}
+
+@media screen and (max-width: 640px){
+   
+}
