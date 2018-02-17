@@ -56,7 +56,6 @@ h2, h3 {
     z-index: 99;
     overflow: auto;
     position: fixed;
-    color: #fff;
     background: #fff;
     border-bottom: 2px solid #470a0a;
 }
