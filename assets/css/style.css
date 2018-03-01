@@ -204,10 +204,11 @@ footer {
     color: #fff;
 }
 
-.work:hover {
+/* animation, commented out because it's obnoxious */
+/*.work:hover {
     animation-name: portfolioAnim;
     animation-duration: 1s;
-}
+}*/
 
 /* contact */
 

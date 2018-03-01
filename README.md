@@ -15,9 +15,6 @@ For this project, I've added media queries to the [Basic Portfolio](http://githu
 * small - `641px - 768px wide`
 * x-small - `<= 640px wide`
 
-## Bonus
-Hover over the portfolio items for a spinning animation!
-
 ## Screenshots
 ### Large
 <img alt="large" src="readme-images/large.png" />
