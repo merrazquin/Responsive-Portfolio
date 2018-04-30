@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Marcela Errazquin - Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
+
 <body>
-    
+
     <header id="masthead">
-        <div class="container"> 
+        <div class="container">
             <a href="index.html" id="logo">Marcela Errazquin</a>
             <nav>
                 <a href="index.html">About</a>
@@ -25,17 +27,17 @@
     <div id="main-container" class="container">
         <section class="main-section">
             <h1>Contact</h1>
-           
+
             <form id="contact-form">
                 <ul>
                     <li>
                         <label for="contactName">Name</label>
-                        <input type="text" id="contactName" name="contactName" placeholder="John Smith" required="required"/>
+                        <input type="text" id="contactName" name="contactName" placeholder="John Smith" required="required" />
                     </li>
 
                     <li>
                         <label for="contactEmail">Email</label>
-                        <input type="email" id="contactEmail" name="contactEmail" placeholder="example@gmail.com" required="required"/>
+                        <input type="email" id="contactEmail" name="contactEmail" placeholder="example@gmail.com" required="required" />
                     </li>
 
                     <li>
@@ -44,7 +46,7 @@
                     </li>
                 </ul>
 
-                <input type="submit" name="Submit"/>
+                <input type="submit" name="Submit" />
             </form>
         </section>
 
@@ -52,9 +54,15 @@
             <div id="connect">
                 <h2>Connect with Me</h2>
 
-                <a href="https://github.com/merrazquin" target="_blank"><img src="assets/images/if_github_square_black_107109.png" class="social" alt="Github"/></a>
-                <a href="https://www.linkedin.com/in/marcela-errazquin-9b39264/" target="_blank"><img src="assets/images/if_linkedin_square_color_107091.png" class="social" alt="LinkedIn"/></a>
-                <a href="https://stackoverflow.com/users/426609/marcela?tab=profile" target="_blank"><img src="assets/images/so-icon.png" class="social" alt="StackOverflow"/></a>
+                <a href="https://github.com/merrazquin" target="_blank">
+                    <img src="assets/images/if_github_square_black_107109.png" class="social" alt="Github" />
+                </a>
+                <a href="https://www.linkedin.com/in/marcela-errazquin-9b39264/" target="_blank">
+                    <img src="assets/images/if_linkedin_square_color_107091.png" class="social" alt="LinkedIn" />
+                </a>
+                <a href="https://stackoverflow.com/users/426609/marcela?tab=profile" target="_blank">
+                    <img src="assets/images/so-icon.png" class="social" alt="StackOverflow" />
+                </a>
             </div>
         </section>
     </div>
@@ -64,5 +72,37 @@
             &copy; Copyright 2018 Marcela Errazquin
         </div>
     </footer>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDgcbXX9KomP8rYqSATB6dn2NBgGmffFX8",
+            authDomain: "portfolio-contact-60d7a.firebaseapp.com",
+            databaseURL: "https://portfolio-contact-60d7a.firebaseio.com",
+            projectId: "portfolio-contact-60d7a",
+            storageBucket: "",
+            messagingSenderId: "713445473274"
+        };
+        firebase.initializeApp(config);
+
+        var db = firebase.database();
+        var contactRef = db.ref("/contact");
+        var form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', formSubmit);
+
+        function formSubmit(e) {
+            e.preventDefault();
+            contactRef.push({
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                message: document.getElementById('contactMessage').value
+            })
+            form.reset()
+        }
+    </script>
 </body>
+
 </html>
